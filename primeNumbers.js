@@ -62,11 +62,13 @@ function primeNumbers(n) {
     if(primes.length === n) return primes;
 };
 
-console.log(primeNumbers(20));
+console.log(primeNumbers(1000));
 
 // STRENGTHS
 // returns the correct amount of numbers
 // filters out some non-prime numbers
+// it didn't time out with 1000 numbers
 
 // WEAKNESSES
 // returns some numbers that aren't prime
+// it took at least a few minutes to collect 1000 numbers
