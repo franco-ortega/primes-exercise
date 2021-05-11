@@ -62,4 +62,11 @@ function primeNumbers(n) {
     if(primes.length === n) return primes;
 };
 
-console.log(primeNumbers(10));
+console.log(primeNumbers(20));
+
+// STRENGTHS
+// returns the correct amount of numbers
+// filters out some non-prime numbers
+
+// WEAKNESSES
+// returns some numbers that aren't prime
