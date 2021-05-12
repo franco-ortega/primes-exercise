@@ -36,7 +36,7 @@ function primeNumbers(n) {
             do {
                 if(primeNumber % divider !==0) {
                     candidate = primeNumber;
-                    divider++; // 2++ = 3
+                    divider++;
                 } else {
                     candidate = 0;
                     decider = true;
@@ -59,7 +59,7 @@ function primeNumbers(n) {
     return primes;
 };
 
-console.log(primeNumbers(10000));
+console.log(primeNumbers(1000));
 
 // STRENGTHS
 // all returned items are prime numbers
