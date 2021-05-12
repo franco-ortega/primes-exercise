@@ -1,9 +1,4 @@
-// console.log('Is this working?');
-
-
 function primeNumbers(n) {
-    // console.log('Top of function.')
-
     //Sample returns
     // n = 1: return 2 
     // n = 2: return 2, 3
@@ -28,47 +23,48 @@ function primeNumbers(n) {
         // divide candidate by 2 as the first test; if it fails, increment the 2 by 1, and so on until the divider is 1 less than the candidate
         // let divider = 2;
 
+        // NEW COMMENTS
+        //check to see if primeNumber is evenly divisible by 2
+        //if so, be done; if not, see if it's divisible by one higher number and continue this until it reaches the number one below itself
+        //if it reaches the number below and still isn't evenly divisble, then add it to the primes array
+        primeNumber++;
+        let divider = 2;
+        let candidate = 0;
+        let decider = false;
+
         do {
-            console.log('start of OUTER loop')
-            primeNumber++;
-            let divider = 2;
-            let candidate = 0;
-
             do {
-                console.log('start of INNER loop')
-                if(primeNumber % divider !== 0) {
+                if(primeNumber % divider !==0) {
                     candidate = primeNumber;
-                    console.log(primes);
-                    divider++;
-                    console.log(divider);
+                    divider++; // 2++ = 3
                 } else {
-                    console.log('else')
-                    divider++;
+                    candidate = 0;
+                    decider = true;
                 };
-            } while (primeNumber % divider > 1);
 
+                if(divider === primeNumber) decider = true;
+    
+            } while (decider === false);
+    
             if(candidate !== 0) primes.push(candidate);
-
-            console.log('end of INNER loop');
-            
+            primeNumber++;
+            divider = 2;
+            candidate = 0;
+            decider = false;
 
         } while (primes.length < n);
-        console.log('end of OUTER loop');
     }
 
-    console.log(primes);
-    console.log('Bottom of function.')
-    
-    if(primes.length === n) return primes;
+    console.log(primes.length);
+    return primes;
 };
 
-console.log(primeNumbers(1000));
+console.log(primeNumbers(10000));
 
 // STRENGTHS
-// returns the correct amount of numbers
-// filters out some non-prime numbers
-// it didn't time out with 1000 numbers
+// all returned items are prime numbers
+// returns the correct amount of items
+// completes in less than a second
 
 // WEAKNESSES
-// returns some numbers that aren't prime
-// it took at least a few minutes to collect 1000 numbers
+// ?? uses a lot variables
